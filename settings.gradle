@@ -1,0 +1,2 @@
+include ':dagger-bottomsheet-dialog-fragment'
+rootProject.name='DaggerBottomSheetDialogFragment'

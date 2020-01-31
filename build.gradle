@@ -1,0 +1,37 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    repositories {
+        google()
+        jcenter()
+        
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.5.3'
+        classpath 'digital.wup:android-maven-publish:3.6.2'
+    }
+}
+
+allprojects {
+    apply plugin: 'digital.wup.android-maven-publish'
+    group = 'jp.s64.android'
+    repositories {
+        google()
+        jcenter()
+    }
+    publishing {
+        repositories {
+            maven {
+                credentials {
+                    username = 'S64'
+                    password = 'TODO'
+                }
+                url = 'https://maven.pkg.github.com/S64/DaggerBottomSheetDialogFragment'
+            }
+        }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
